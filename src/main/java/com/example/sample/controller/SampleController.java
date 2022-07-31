@@ -1,8 +1,10 @@
 package com.example.sample.controller;
 
 import com.example.sample.modal.Login;
+import com.example.sample.service.ExtAPIServiceImpl;
 import com.example.sample.service.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ public class SampleController {
 
     @Autowired
     LoginServiceImpl loginServiceImpl;
+
+    @Autowired
+    ExtAPIServiceImpl extAPIServiceImpl;
 
     @GetMapping("/")
     public String Index() {
@@ -44,6 +49,11 @@ public class SampleController {
     @GetMapping("/findAllUsers")
     public ArrayList<Login> findAllUsers() {
         return loginServiceImpl.findAllUser();
+    }
+
+    @GetMapping("/findUsers")
+    public String findUsers() {
+        return extAPIServiceImpl.findUsersByCallingExtAPI();
     }
 
 }
