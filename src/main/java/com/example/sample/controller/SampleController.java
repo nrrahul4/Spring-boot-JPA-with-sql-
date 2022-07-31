@@ -4,7 +4,6 @@ import com.example.sample.modal.Login;
 import com.example.sample.service.ExtAPIServiceImpl;
 import com.example.sample.service.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
